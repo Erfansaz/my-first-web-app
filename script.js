@@ -56,6 +56,21 @@ button.addEventListener("click", function () {
         return;
     }
 
+    fetch("http://localhost:3000/tasks", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        text: taskText
+    })
+})
+.then(function (response) {
+    return response.json();
+})
+.then(function (data) {
+    console.log(data);
+
     tasks.push({
         text: taskText,
         completed: false
@@ -66,5 +81,7 @@ button.addEventListener("click", function () {
 
     input.value = "";
 });
+});
 
 showTasks();
+console.log("NEW SCRIPT IS WORKING!");
