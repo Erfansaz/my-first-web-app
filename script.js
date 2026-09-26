@@ -56,7 +56,7 @@ button.addEventListener("click", function () {
         return;
     }
 
-    fetch("http://localhost:3000/tasks", {
+    fetch("https://my-first-backend-d3re.onrender.com/tasks", {
     method: "POST",
     headers: {
         "Content-Type": "application/json"
